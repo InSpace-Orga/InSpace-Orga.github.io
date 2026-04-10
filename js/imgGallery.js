@@ -8,7 +8,7 @@
     "imgGallery/IMG (6).jpg",
     "imgGallery/IMG (7).jpg",
     "imgGallery/IMG (8).jpg",
-    "imgGallery/IMG (9).jpg",
+    "imgGallery/IMG (9).png",
   ];
   const SLOT_COUNT = 5;   // Anzahl der sichtbaren Kacheln
   const INTERVAL_MS = 6000; // Millisekunden zwischen automatischen Wechseln
