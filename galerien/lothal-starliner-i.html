@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="de">
 
 <head>
@@ -69,15 +69,15 @@
         ];
 
         const grid = document.getElementById('eventGalleryGrid');
-        const folder = '../imgGallery/lothal-starliner-i';
-        const fullPaths = images.map((file) => `${folder}/${file}`);
+        const folder = '../imgGallery/web/lothal-starliner-i';
+        const fullPaths = images.map((file) => `${folder}/${file.replace(/\.jpg$/i, '.webp')}`);
 
         images.forEach((file, index) => {
             const figure = document.createElement('figure');
             figure.className = 'event-gallery-card';
 
             const img = document.createElement('img');
-            img.src = `${folder}/${file}`;
+            img.src = `${folder}/${file.replace(/\.jpg$/i, '.webp')}`;
             img.alt = `Lothal Starliner I - Bild ${String(index + 1).padStart(2, '0')}`;
             img.loading = 'lazy';
             img.decoding = 'async';
@@ -92,7 +92,7 @@
         if (window.initGalleryViewer) {
             window.initGalleryViewer({
                 images: fullPaths,
-                selector: '#eventGalleryGrid img',
+                selector: '#eventGalleryGrid .event-gallery-card',
                 title: 'Lothal Starliner I',
                 captions: images.map((_, index) => `Bild ${String(index + 1).padStart(2, '0')}`),
             });

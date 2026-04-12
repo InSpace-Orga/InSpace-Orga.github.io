@@ -1,12 +1,12 @@
 (() => {
   let state = null;
+  let viewer = null;
 
   function normalizeIndex(index, length) {
     return (index + length) % length;
   }
 
   function ensureViewer() {
-    let viewer = document.getElementById('galleryViewer');
     if (viewer) {
       return viewer;
     }
@@ -66,12 +66,12 @@
       return;
     }
 
-    const viewer = ensureViewer();
+    const currentViewer = ensureViewer();
     const item = state.items[state.index];
-    const image = viewer.querySelector('#galleryViewerImage');
-    const caption = viewer.querySelector('#galleryViewerCaption');
-    const counter = viewer.querySelector('#galleryViewerCounter');
-    const title = viewer.querySelector('#galleryViewerTitle');
+    const image = currentViewer.querySelector('#galleryViewerImage');
+    const caption = currentViewer.querySelector('#galleryViewerCaption');
+    const counter = currentViewer.querySelector('#galleryViewerCounter');
+    const title = currentViewer.querySelector('#galleryViewerTitle');
 
     image.src = item.src;
     image.alt = item.alt;
@@ -92,7 +92,6 @@
   }
 
   function closeViewer() {
-    const viewer = document.getElementById('galleryViewer');
     if (viewer) {
       viewer.classList.remove('open');
     }
@@ -119,29 +118,35 @@
       title: options.title || 'Bildansicht',
     };
 
-    const selector = options.selector;
-    const elements = document.querySelectorAll(selector);
-
-    elements.forEach((img) => {
-      const matchedIndex = items.findIndex((item) => item.src === img.getAttribute('src') || item.src === img.src || item.src.endsWith(img.getAttribute('src')));
-      if (matchedIndex === -1) {
-        return;
-      }
-
-      img.setAttribute('role', 'button');
-      img.setAttribute('tabindex', '0');
-      img.setAttribute('aria-label', `Bild ${matchedIndex + 1} vergrößern`);
-
-      const openAt = () => openViewer(matchedIndex);
-      img.addEventListener('click', openAt);
-      img.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter' || event.key === ' ') {
-          event.preventDefault();
-          openAt();
-        }
-      });
-    });
-
     ensureViewer();
+
+    if (options.selector) {
+      const elements = document.querySelectorAll(options.selector);
+
+      elements.forEach((element, elementIndex) => {
+        const getIndex = typeof options.getIndex === 'function'
+          ? options.getIndex
+          : () => elementIndex;
+
+        element.setAttribute('role', 'button');
+        element.setAttribute('tabindex', '0');
+        element.setAttribute('aria-label', 'Bild vergrößern');
+        element.style.cursor = 'zoom-in';
+
+        const openAt = () => openViewer(normalizeIndex(getIndex(element, elementIndex), items.length));
+        element.addEventListener('click', openAt);
+        element.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            openAt();
+          }
+        });
+      });
+    }
+
+    return {
+      open: openViewer,
+      close: closeViewer,
+    };
   };
 })();

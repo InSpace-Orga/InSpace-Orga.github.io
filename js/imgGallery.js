@@ -1,72 +1,82 @@
 ﻿const IMAGES = [
-  'imgGallery/IMG (1).jpg',
-  'imgGallery/IMG (2).jpg',
-  'imgGallery/IMG (3).jpg',
-  'imgGallery/IMG (4).jpg',
-  'imgGallery/IMG (5).jpg',
-  'imgGallery/IMG (6).jpg',
-  'imgGallery/IMG (7).jpg',
-  'imgGallery/IMG (8).jpg',
-  'imgGallery/IMG (9).jpg',
+  'imgGallery/web/home/IMG (1).webp',
+  'imgGallery/web/home/IMG (2).webp',
+  'imgGallery/web/home/IMG (3).webp',
+  'imgGallery/web/home/IMG (4).webp',
+  'imgGallery/web/home/IMG (5).webp',
+  'imgGallery/web/home/IMG (6).webp',
+  'imgGallery/web/home/IMG (7).webp',
+  'imgGallery/web/home/IMG (8).webp',
+  'imgGallery/web/home/IMG (9).webp',
 ];
+
 const SLOT_COUNT = 5;
 const INTERVAL_MS = 6000;
 
 const grid = document.getElementById('galleryGrid');
 const dotsContainer = document.getElementById('galleryDots');
 
-const slots = Array.from({ length: SLOT_COUNT }, (_, i) => {
-  const div = document.createElement('div');
-  div.className = 'gallery-item';
+const slots = Array.from({ length: SLOT_COUNT }, (_, slotIndex) => {
+  const figure = document.createElement('div');
+  figure.className = 'gallery-item';
+  figure.dataset.slotIndex = String(slotIndex);
 
-  const imgs = IMAGES.map((src) => {
-    const img = document.createElement('img');
-    img.src = src;
-    img.alt = src;
-    return img;
-  });
+  const img = document.createElement('img');
+  img.alt = '';
+  figure.appendChild(img);
 
-  imgs.forEach((img) => div.appendChild(img));
-
-  if (i === 0) {
+  if (slotIndex === 0) {
     const counter = document.createElement('div');
     counter.className = 'gallery-counter';
     counter.id = 'galleryCounter';
-    div.appendChild(counter);
+    figure.appendChild(counter);
   }
 
-  grid.appendChild(div);
-  return { div, imgs };
+  grid.appendChild(figure);
+  return { figure, img };
 });
 
 const dots = IMAGES.map((_, i) => {
   const btn = document.createElement('button');
   btn.className = 'gallery-dot' + (i === 0 ? ' active' : '');
+  btn.type = 'button';
   btn.addEventListener('click', () => goTo(i));
   dotsContainer.appendChild(btn);
   return btn;
 });
 
 let current = 0;
+let timer = null;
+const btnAuto = document.getElementById('btnAuto');
 
-function goTo(index) {
-  current = (index + IMAGES.length) % IMAGES.length;
-  slots.forEach(({ imgs }, slotIdx) => {
-    imgs.forEach((img, imgIdx) => {
-      const target = (current + slotIdx) % IMAGES.length;
-      img.classList.toggle('active', imgIdx === target);
-    });
+function preload(index) {
+  const image = new Image();
+  image.src = IMAGES[(index + IMAGES.length) % IMAGES.length];
+}
+
+function renderSlots() {
+  slots.forEach(({ figure, img }, slotIdx) => {
+    const imageIndex = (current + slotIdx) % IMAGES.length;
+    const src = IMAGES[imageIndex];
+    figure.dataset.imageIndex = String(imageIndex);
+    img.src = src;
+    img.alt = `Bild ${imageIndex + 1}`;
+    img.classList.add('active');
   });
 
-  dots.forEach((dot, i) => dot.classList.toggle('active', i === current));
   const counter = document.getElementById('galleryCounter');
   if (counter) {
     counter.textContent = `${current + 1} / ${IMAGES.length}`;
   }
+
+  dots.forEach((dot, i) => dot.classList.toggle('active', i === current));
+  preload(current + SLOT_COUNT);
 }
 
-let timer = null;
-const btnAuto = document.getElementById('btnAuto');
+function goTo(index) {
+  current = (index + IMAGES.length) % IMAGES.length;
+  renderSlots();
+}
 
 function startAuto() {
   timer = setInterval(() => goTo(current + 1), INTERVAL_MS);
@@ -85,19 +95,22 @@ document.getElementById('btnPrev').addEventListener('click', () => {
   stopAuto();
   goTo(current - 1);
 });
+
 document.getElementById('btnNext').addEventListener('click', () => {
   stopAuto();
   goTo(current + 1);
 });
+
 btnAuto.addEventListener('click', () => (timer ? stopAuto() : startAuto()));
 
-goTo(0);
+renderSlots();
 startAuto();
 
 if (window.initGalleryViewer) {
   window.initGalleryViewer({
     images: IMAGES,
-    selector: '#galleryGrid img',
+    selector: '#galleryGrid .gallery-item',
     title: 'InSpace Orga Galerie',
+    getIndex: (element) => Number(element.dataset.imageIndex || 0),
   });
 }
