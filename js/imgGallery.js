@@ -58,7 +58,7 @@ function renderSlots() {
   slots.forEach(({ figure, img }, slotIdx) => {
     const imageIndex = (current + slotIdx) % IMAGES.length;
     const src = IMAGES[imageIndex];
-    figure.dataset.imageIndex = String(imageIndex);
+    figure.dataset.galleryIndex = String(imageIndex);
     img.src = src;
     img.alt = `Bild ${imageIndex + 1}`;
     img.classList.add('active');
@@ -111,6 +111,5 @@ if (window.initGalleryViewer) {
     images: IMAGES,
     selector: '#galleryGrid .gallery-item',
     title: 'InSpace Orga Galerie',
-    getIndex: (element) => Number(element.dataset.imageIndex || 0),
   });
 }

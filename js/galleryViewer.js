@@ -124,16 +124,14 @@
       const elements = document.querySelectorAll(options.selector);
 
       elements.forEach((element, elementIndex) => {
-        const getIndex = typeof options.getIndex === 'function'
-          ? options.getIndex
-          : () => elementIndex;
+        const defaultIndex = Number(element.dataset.galleryIndex || elementIndex);
 
         element.setAttribute('role', 'button');
         element.setAttribute('tabindex', '0');
         element.setAttribute('aria-label', 'Bild vergrößern');
         element.style.cursor = 'zoom-in';
 
-        const openAt = () => openViewer(normalizeIndex(getIndex(element, elementIndex), items.length));
+        const openAt = () => openViewer(normalizeIndex(defaultIndex, items.length));
         element.addEventListener('click', openAt);
         element.addEventListener('keydown', (event) => {
           if (event.key === 'Enter' || event.key === ' ') {

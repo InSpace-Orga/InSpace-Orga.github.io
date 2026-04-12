@@ -75,6 +75,7 @@
         images.forEach((file, index) => {
             const figure = document.createElement('figure');
             figure.className = 'event-gallery-card';
+            figure.dataset.galleryIndex = String(index);
 
             const img = document.createElement('img');
             img.src = `${folder}/${file.replace(/\.jpg$/i, '.webp')}`;
