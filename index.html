@@ -42,7 +42,7 @@
         <ul class="nav-links">
             <li><a href="#ueber-uns">Über uns</a></li>
             <li><a href="#termine">Termine</a></li>
-            <li><a href="#galerie">Galerie</a></li>
+            <li><a href="#galerie">Highlights</a></li>
             <li><a href="#kontakt">Kontakt</a></li>
         </ul>
     </nav>
@@ -123,32 +123,47 @@
     <!-- TERMINE -->
     <section class="section-dark" id="termine">
         <div class="section-inner">
-            <span class="section-label" style="color:var(--gold-light)">✦ Kommende Abenteuer</span>
-            <h2 class="section-title light">Nächste Termine</h2>
-            <div class="events-grid">
-                <div class="event-card">
-                    <div class="event-type scifi">Sci-Fi</div>
-                    <div class="event-date">11. April 2026</div>
-                    <div class="event-title">Lothal Starliner I</div>
-                    <div class="event-desc">Rebellen vs. Imperium</div>
-                    <div class="event-meta"><span>~15 Spieler</span><span>Cantina</span></div>
+            <span class="section-label" style="color:var(--gold-light)">✦ Kalender</span>
+            <h2 class="section-title light">Termine</h2>
+            <div class="events-section">
+                <div class="events-section-head">
+                    <h3 class="events-section-title">Kommende Termine</h3>
+                    <p class="events-section-desc">Alle Veranstaltungen, die noch vor uns liegen.</p>
                 </div>
-                <div class="event-card">
-                    <div class="event-type fantasy">Mittelalter Fantasy</div>
-                    <div class="event-date">18. April 2026</div>
-                    <div class="event-title">Inaka Weinfest</div>
-                    <div class="event-desc">Feiert mit uns die Göttin Daichi</div>
-                    <div class="event-meta"><span>~20 Spieler</span><span>Tagescon</span></div>
+                <div class="events-grid">
+                    <div class="event-card">
+                        <div class="event-type fantasy">Mittelalter Fantasy</div>
+                        <div class="event-date">18. April 2026</div>
+                        <div class="event-title">Inaka Weinfest</div>
+                        <div class="event-desc">Feiert mit uns die Göttin Daichi</div>
+                        <div class="event-meta"><span>~20 Spieler</span><span>Tagescon</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="events-section">
+                <div class="events-section-head">
+                    <h3 class="events-section-title">Vergangene Termine</h3>
+                    <p class="events-section-desc">Abgeschlossene Veranstaltungen mit Galerie oder Rückblick.</p>
+                </div>
+                <div class="events-grid">
+                    <div class="event-card">
+                        <div class="event-type scifi">Sci-Fi</div>
+                        <div class="event-date">11. April 2026</div>
+                        <div class="event-title">Lothal Starliner I</div>
+                        <div class="event-desc">Rebellen vs. Imperium</div>
+                        <div class="event-meta"><a href="galerien/lothal-starliner-i.html" class="btn-secondary">Galerie öffnen</a></div>
+                        <div class="event-meta"><span>~15 Spieler</span><span>Cantina</span></div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- GALERIE -->
-    <section class="section-parchment" id="galerie">
+    <!-- HIGHLIGHTS -->
+    <section class="section-parchment gallery-section" id="galerie">
         <div class="section-inner">
             <span class="section-label">✦ Eindrücke</span>
-            <h2 class="section-title">Galerie</h2>
+            <h2 class="section-title">Highlights</h2>
             <div class="gallery-grid" id="galleryGrid">
                 <!-- Slots werden per JS befüllt -->
             </div>
@@ -161,6 +176,7 @@
         </div>
     </section>
 
+    <script src="js/galleryViewer.js"></script>
     <script src="js/imgGallery.js"></script>
 
     <!-- KONTAKT -->

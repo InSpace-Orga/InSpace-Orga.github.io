@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lothal Starliner I | InSpace Orga Galerie</title>
+    <meta name="description"
+        content="Die vollständige Galerie zu Lothal Starliner I mit allen Bildern aus dem Sci-Fi-LARP der InSpace Orga.">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://inspace-orga.github.io/galerien/lothal-starliner-i.html">
+    <link rel="stylesheet" href="../style/base.css">
+    <link rel="icon" type="image/png" href="../img/InakaWappen_noText.png">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="InSpace Orga">
+    <meta property="og:title" content="Lothal Starliner I | InSpace Orga Galerie">
+    <meta property="og:description"
+        content="Die vollständige Galerie zu Lothal Starliner I mit allen Bildern aus dem Sci-Fi-LARP der InSpace Orga.">
+    <meta property="og:url" content="https://inspace-orga.github.io/galerien/lothal-starliner-i.html">
+    <meta property="og:image" content="https://inspace-orga.github.io/img/InakaWappen_noText.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Lothal Starliner I | InSpace Orga Galerie">
+    <meta name="twitter:description"
+        content="Die vollständige Galerie zu Lothal Starliner I mit allen Bildern aus dem Sci-Fi-LARP der InSpace Orga.">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-logo">InSpace Orga</div>
+        <ul class="nav-links">
+            <li><a href="../index.html#galerie">Zurück zu den Highlights</a></li>
+        </ul>
+    </nav>
+
+    <section class="section-dark event-gallery-hero">
+        <div class="section-inner">
+            <span class="section-label" style="color:var(--gold-light)">✦ Sci-Fi Galerie</span>
+            <h1 class="section-title light">Lothal Starliner I</h1>
+            <p class="event-gallery-lead">Rebellen vs. Imperium, Cantina-Momente und alles dazwischen. Hier findet ihr die
+                komplette Galerie zur Veranstaltung.</p>
+            <div class="event-gallery-meta">
+                <span>11. April 2026</span>
+                <span>19 Bilder</span>
+                <span>Lothal Starliner I</span>
+            </div>
+            <div class="event-gallery-nav">
+                <a class="btn-primary" href="../index.html#galerie">Zu den Highlights</a>
+                <a class="btn-secondary" href="../index.html#termine">Zur Übersicht</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-parchment">
+        <div class="section-inner">
+            <span class="section-label">✦ Vollständige Galerie</span>
+            <h2 class="section-title">Alle Eindrücke</h2>
+            <div class="event-gallery-grid" id="eventGalleryGrid"></div>
+        </div>
+    </section>
+
+    <script src="../js/galleryViewer.js"></script>
+    <script>
+        const images = [
+            'edit01.jpg', 'edit02.jpg', 'edit03.jpg', 'edit04.jpg', 'edit05.jpg',
+            'edit06.jpg', 'edit07.jpg', 'edit08.jpg', 'edit09.jpg', 'edit10.jpg',
+            'edit11.jpg', 'edit12.jpg', 'edit13.jpg', 'edit14.jpg', 'edit15.jpg',
+            'edit16.jpg', 'edit17.jpg', 'edit18.jpg', 'edit19.jpg'
+        ];
+
+        const grid = document.getElementById('eventGalleryGrid');
+        const folder = '../imgGallery/lothal-starliner-i';
+        const fullPaths = images.map((file) => `${folder}/${file}`);
+
+        images.forEach((file, index) => {
+            const figure = document.createElement('figure');
+            figure.className = 'event-gallery-card';
+
+            const img = document.createElement('img');
+            img.src = `${folder}/${file}`;
+            img.alt = `Lothal Starliner I - Bild ${String(index + 1).padStart(2, '0')}`;
+            img.loading = 'lazy';
+            img.decoding = 'async';
+
+            const caption = document.createElement('figcaption');
+            caption.textContent = `Bild ${String(index + 1).padStart(2, '0')}`;
+
+            figure.append(img, caption);
+            grid.appendChild(figure);
+        });
+
+        if (window.initGalleryViewer) {
+            window.initGalleryViewer({
+                images: fullPaths,
+                selector: '#eventGalleryGrid img',
+                title: 'Lothal Starliner I',
+                captions: images.map((_, index) => `Bild ${String(index + 1).padStart(2, '0')}`),
+            });
+        }
+    </script>
+
+    <footer>
+        <div class="footer-logo">InSpace Orga · Welt von Inaka</div>
+        <p class="footer-copy">© 2026 InSpace Orga · Alle Rechte vorbehalten</p>
+        <div class="footer-stats" aria-live="polite">
+            <span class="footer-stats-label">Besucherzähler</span>
+            <span class="footer-stats-value" id="pageVisitCount">--</span>
+            <span class="footer-stats-status" id="pageVisitStatus">Initialisiere ...</span>
+        </div>
+        <p class="footer-impressum"><a href="https://emmet03.github.io/Pages/impressum.html" target="_blank"
+                rel="noopener noreferrer">Impressum</a></p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/mqtt/dist/mqtt.min.js"></script>
+    <script src="../js/pageCounter.js"></script>
+</body>
+
+</html>
