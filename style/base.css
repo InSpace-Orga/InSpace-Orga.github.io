@@ -1179,6 +1179,39 @@ footer {
     color: var(--gold-light);
 }
 
+.legal-content {
+    max-width: 760px;
+}
+
+.legal-content .section-title {
+    margin-top: 2.5rem;
+    margin-bottom: 0.85rem;
+    font-size: clamp(1.35rem, 3vw, 1.9rem);
+}
+
+.legal-content .section-title:first-child {
+    margin-top: 0;
+}
+
+.legal-content p,
+.legal-content li {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: var(--ink-light);
+}
+
+.legal-content p + p {
+    margin-top: 0.9rem;
+}
+
+.legal-content ul {
+    margin: 0.75rem 0 1rem 1.5rem;
+}
+
+.legal-content li + li {
+    margin-top: 0.25rem;
+}
+
 @media (max-width: 640px) {
 
     .about-grid,
