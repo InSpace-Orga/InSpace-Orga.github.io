@@ -23,7 +23,8 @@ Die Seite besteht aus statischem HTML, CSS und etwas JavaScript und wird über G
 
 - Originalbilder für die Hauptseite liegen in `imgGallery/`
 - Originalbilder für `Lothal Starliner I` liegen in `imgGallery/lothal-starliner-i/`
-- Die Web-Versionen für die Website werden in `imgGallery/web/home/` und `imgGallery/web/lothal-starliner-i/` erzeugt
+- Originalbilder für `Inaka Weinfest I` liegen in `imgGallery/inaka-weinfest-i/`
+- Die Web-Versionen für die Website werden in `imgGallery/web/home/`, `imgGallery/web/lothal-starliner-i/` und `imgGallery/web/inaka-weinfest-i/` erzeugt
 
 ### Bilder in WebP umwandeln
 

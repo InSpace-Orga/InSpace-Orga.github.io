@@ -7,6 +7,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE_TARGETS = [
     (ROOT / "imgGallery", ROOT / "imgGallery" / "web" / "home", 1600, 82),
     (ROOT / "imgGallery" / "lothal-starliner-i", ROOT / "imgGallery" / "web" / "lothal-starliner-i", 1600, 82),
+    (ROOT / "imgGallery" / "inaka-weinfest-i", ROOT / "imgGallery" / "web" / "inaka-weinfest-i", 1600, 82),
 ]
 
 

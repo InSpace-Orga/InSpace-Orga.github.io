@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inaka Weinfest I | InSpace Orga Galerie</title>
+    <meta name="description"
+        content="Die vollständige Galerie zum Inaka Weinfest I mit allen Bildern aus dem Fantasy-LARP der InSpace Orga.">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://inspace-orga.github.io/galerien/inaka-weinfest-i.html">
+    <link rel="stylesheet" href="../style/base.css">
+    <link rel="icon" type="image/png" href="../img/InakaWappen_noText.png">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="InSpace Orga">
+    <meta property="og:title" content="Inaka Weinfest I | InSpace Orga Galerie">
+    <meta property="og:description"
+        content="Die vollständige Galerie zum Inaka Weinfest I mit allen Bildern aus dem Fantasy-LARP der InSpace Orga.">
+    <meta property="og:url" content="https://inspace-orga.github.io/galerien/inaka-weinfest-i.html">
+    <meta property="og:image" content="https://inspace-orga.github.io/img/InakaWappen_noText.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Inaka Weinfest I | InSpace Orga Galerie">
+    <meta name="twitter:description"
+        content="Die vollständige Galerie zum Inaka Weinfest I mit allen Bildern aus dem Fantasy-LARP der InSpace Orga.">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-logo">InSpace Orga</div>
+        <ul class="nav-links">
+            <li><a href="../index.html#termine">Zurück zu den Terminen</a></li>
+            <li><a href="../index.html#galerie">Highlights</a></li>
+        </ul>
+    </nav>
+
+    <section class="section-dark event-gallery-hero event-gallery-hero-weinfest">
+        <div class="section-inner">
+            <span class="section-label" style="color:var(--gold-light)">✦ Fantasy Galerie</span>
+            <h1 class="section-title light">Inaka Weinfest I</h1>
+            <p class="event-gallery-lead">Wein, Tavernenstimmung und die Atmosphäre eines Tages in Inaka. Hier findet ihr
+                die komplette Galerie zur Veranstaltung.</p>
+            <div class="event-gallery-meta">
+                <span>18. April 2026</span>
+                <span>8 Bilder</span>
+                <span>Inaka Weinfest I</span>
+            </div>
+            <div class="event-gallery-nav">
+                <a class="btn-primary" href="../index.html#termine">Zu den Terminen</a>
+                <a class="btn-secondary" href="../index.html#galerie">Zu den Highlights</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-parchment">
+        <div class="section-inner">
+            <span class="section-label">✦ Vollständige Galerie</span>
+            <h2 class="section-title">Alle Eindrücke</h2>
+            <div class="event-gallery-grid" id="eventGalleryGrid"></div>
+        </div>
+    </section>
+
+    <script src="../js/galleryViewer.js"></script>
+    <script>
+        const images = [
+            'IMG (1).jpg', 'IMG (2).jpg', 'IMG (3).jpg', 'IMG (4).jpg',
+            'IMG (5).jpg', 'IMG (6).jpg', 'IMG (7).jpg', 'IMG (8).jpg'
+        ];
+
+        const grid = document.getElementById('eventGalleryGrid');
+        const folder = '../imgGallery/web/inaka-weinfest-i';
+        const fullPaths = images.map((file) => `${folder}/${file.replace(/\.jpg$/i, '.webp')}`);
+
+        images.forEach((file, index) => {
+            const figure = document.createElement('figure');
+            figure.className = 'event-gallery-card';
+            figure.dataset.galleryIndex = String(index);
+
+            const img = document.createElement('img');
+            img.src = `${folder}/${file.replace(/\.jpg$/i, '.webp')}`;
+            img.alt = `Inaka Weinfest I - Bild ${String(index + 1).padStart(2, '0')}`;
+            img.loading = 'lazy';
+            img.decoding = 'async';
+
+            const caption = document.createElement('figcaption');
+            caption.textContent = `Bild ${String(index + 1).padStart(2, '0')}`;
+
+            figure.append(img, caption);
+            grid.appendChild(figure);
+        });
+
+        if (window.initGalleryViewer) {
+            window.initGalleryViewer({
+                images: fullPaths,
+                selector: '#eventGalleryGrid .event-gallery-card',
+                title: 'Inaka Weinfest I',
+                captions: images.map((_, index) => `Bild ${String(index + 1).padStart(2, '0')}`),
+            });
+        }
+    </script>
+
+    <footer>
+        <div class="footer-logo">InSpace Orga · Welt von Inaka</div>
+        <p class="footer-copy">© 2026 InSpace Orga · Alle Rechte vorbehalten</p>
+        <!-- <div class="footer-stats" aria-live="polite">
+            <span class="footer-stats-label">Besucherzähler</span>
+            <span class="footer-stats-value" id="pageVisitCount">--</span>
+            <span class="footer-stats-status" id="pageVisitStatus">Initialisiere ...</span>
+        </div> -->
+        <p class="footer-impressum"><a href="https://emmet03.github.io/Pages/impressum.html" target="_blank"
+                rel="noopener noreferrer">Impressum</a> · <a href="../datenschutz.html">Datenschutz</a></p>
+    </footer>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/mqtt/dist/mqtt.min.js"></script> -->
+    <!-- <script src="../js/pageCounter.js"></script> -->
+</body>
+
+</html>
