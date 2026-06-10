@@ -37,6 +37,26 @@
 
 <body>
 
+    <div class="site-modal" id="eventNoticeModal" aria-hidden="true">
+        <div class="site-modal-backdrop" data-modal-close></div>
+        <div class="site-modal-panel" role="dialog" aria-modal="true" aria-labelledby="eventNoticeTitle">
+            <button class="site-modal-close" type="button" aria-label="Hinweis schließen" data-modal-close>×</button>
+            <span class="site-modal-kicker">✦ Kommendes Event</span>
+            <h2 class="site-modal-title" id="eventNoticeTitle">Inaka Fest der Winde</h2>
+            <p class="site-modal-text">Am 22. August 2026 feiern wir gemeinsam zu Ehren Kukis. Alle Infos zur
+                Einladung und die direkte Anmeldung findest du hier auf einen Blick.</p>
+            <div class="site-modal-meta">
+                <span>22.08.2026</span>
+                <span>36039 Fulda, Bernhards</span>
+                <span>ab 12:00 Uhr</span>
+            </div>
+            <div class="site-modal-actions">
+                <a href="fest-der-winde.html" class="btn-primary">Zur Einladung</a>
+                <a href="https://forms.gle/FJrQB76nKcZzYu4y5" class="btn-secondary">Zur Anmeldung</a>
+            </div>
+        </div>
+    </div>
+
     <nav>
         <div class="nav-logo">InSpace Orga</div>
         <ul class="nav-links">
@@ -138,7 +158,10 @@
                         <div class="event-date">22. August 2026</div>
                         <div class="event-title">Inaka Fest der Winde</div>
                         <div class="event-desc">Feiert mit uns den Gott Kuki</div>
-                        <div class="event-meta"><a href="https://forms.gle/FJrQB76nKcZzYu4y5" class="btn-secondary">Zur Anmeldung</a></div>
+                        <div class="event-actions">
+                            <a href="fest-der-winde.html" class="btn-primary">Zur Einladung</a>
+                            <a href="https://forms.gle/FJrQB76nKcZzYu4y5" class="btn-secondary">Direkt zur Anmeldung</a>
+                        </div>
                         <div class="event-meta"><span>~25 Spieler</span><span>Tagescon</span></div>
                     </div>
                 </div>
@@ -256,6 +279,45 @@
 
     <!-- <script src="https://cdn.jsdelivr.net/npm/mqtt/dist/mqtt.min.js"></script> -->
     <!-- <script src="js/pageCounter.js"></script> -->
+    <script>
+        (() => {
+            const modal = document.getElementById('eventNoticeModal');
+            if (!modal) {
+                return;
+            }
+
+            const closeModal = () => {
+                modal.classList.remove('open');
+                modal.setAttribute('aria-hidden', 'true');
+                document.body.classList.remove('modal-open');
+            };
+
+            const openModal = () => {
+                modal.classList.add('open');
+                modal.setAttribute('aria-hidden', 'false');
+                document.body.classList.add('modal-open');
+            };
+
+            modal.addEventListener('click', (event) => {
+                if (event.target.matches('[data-modal-close]')) {
+                    closeModal();
+                }
+            });
+
+            window.addEventListener('keydown', (event) => {
+                if (!modal.classList.contains('open')) {
+                    return;
+                }
+                if (event.key === 'Escape') {
+                    closeModal();
+                }
+            });
+
+            window.addEventListener('load', () => {
+                window.setTimeout(openModal, 300);
+            });
+        })();
+    </script>
 
 </body>
 

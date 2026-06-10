@@ -27,6 +27,10 @@ body {
     overflow-x: hidden;
 }
 
+body.modal-open {
+    overflow: hidden;
+}
+
 /* NAV */
 nav {
     position: fixed;
@@ -258,6 +262,108 @@ nav {
     font-family: 'Cinzel', serif;
     opacity: 0.6;
     animation: bounce 2s infinite;
+}
+
+.site-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.site-modal.open {
+    display: flex;
+}
+
+.site-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 7, 3, 0.58);
+    backdrop-filter: blur(4px);
+}
+
+.site-modal-panel {
+    position: relative;
+    z-index: 1;
+    width: min(92vw, 640px);
+    padding: 2.25rem;
+    border: 1px solid rgba(200, 168, 75, 0.28);
+    background:
+        linear-gradient(180deg, rgba(26, 18, 8, 0.98), rgba(42, 24, 10, 0.96));
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+    color: var(--parchment);
+}
+
+.site-modal-close {
+    position: absolute;
+    top: 0.85rem;
+    right: 0.85rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    border: 1px solid rgba(200, 168, 75, 0.3);
+    background: rgba(242, 232, 208, 0.04);
+    color: var(--gold-light);
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.site-modal-kicker {
+    display: block;
+    margin-bottom: 0.7rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+}
+
+.site-modal-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    line-height: 1.1;
+    color: var(--parchment);
+    margin-bottom: 0.9rem;
+}
+
+.site-modal-text {
+    font-size: 1.08rem;
+    line-height: 1.8;
+    color: var(--parchment-dark);
+}
+
+.site-modal-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.4rem;
+    margin-bottom: 1.6rem;
+}
+
+.site-modal-meta span {
+    padding: 0.45rem 0.8rem;
+    border: 1px solid rgba(200, 168, 75, 0.22);
+    background: rgba(242, 232, 208, 0.06);
+    font-family: 'Cinzel', serif;
+    font-size: 0.64rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+}
+
+.site-modal-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.site-modal-actions .btn-primary,
+.site-modal-actions .btn-secondary {
+    flex: 1 1 220px;
+    text-align: center;
 }
 
 @keyframes bounce {
@@ -556,6 +662,21 @@ section {
     gap: 1rem;
 }
 
+.event-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.event-actions .btn-primary,
+.event-actions .btn-secondary {
+    flex: 1 1 180px;
+    text-align: center;
+    padding-left: 1.4rem;
+    padding-right: 1.4rem;
+}
+
 /* GALERIE */
 .gallery-grid {
     display: grid;
@@ -847,6 +968,19 @@ section {
     pointer-events: none;
 }
 
+.event-detail-hero-festderwinde::after {
+    content: '';
+    position: absolute;
+    inset: -2rem;
+    background:
+        linear-gradient(180deg, rgba(22, 18, 10, 0.42), rgba(34, 24, 12, 0.82)),
+        url("../imgGallery/web/home/IMG (8).webp") center/cover no-repeat;
+    filter: blur(10px);
+    transform: scale(1.08);
+    opacity: 0.8;
+    pointer-events: none;
+}
+
 .event-gallery-lead {
     max-width: 760px;
     margin: 0 auto 1.25rem;
@@ -873,6 +1007,100 @@ section {
     justify-content: center;
     gap: 1rem;
     flex-wrap: wrap;
+}
+
+.invitation-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr);
+    gap: 2rem;
+    align-items: start;
+}
+
+.invitation-copy {
+    font-size: 1.08rem;
+    line-height: 1.9;
+    color: var(--ink-light);
+}
+
+.invitation-copy p + p {
+    margin-top: 1rem;
+}
+
+.invitation-note {
+    margin-top: 1.5rem;
+    padding: 1rem 1.2rem;
+    border-left: 3px solid var(--rust);
+    border: 1px solid rgba(154, 122, 42, 0.2);
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.invitation-note strong {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 0.4rem;
+}
+
+.invitation-info-list {
+    display: grid;
+    gap: 0.65rem;
+    color: var(--ink-light);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.invitation-info-list span {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-right: 0.5rem;
+}
+
+.invitation-sidecard {
+    background: #ede0c0;
+    border: 1px solid var(--parchment-dark);
+    border-left: 3px solid var(--gold);
+    padding: 1.5rem;
+}
+
+.invitation-sidecard h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+}
+
+.invitation-facts {
+    display: grid;
+    gap: 0.9rem;
+}
+
+.invitation-fact-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--stone);
+    margin-bottom: 0.2rem;
+}
+
+.invitation-fact-value {
+    font-size: 1rem;
+    color: var(--ink);
+}
+
+.invitation-cta {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
 }
 
 .event-gallery-grid {
@@ -1238,6 +1466,15 @@ footer {
         grid-template-rows: repeat(3, 160px);
     }
 
+    .site-modal-panel {
+        padding: 1.5rem;
+    }
+
+    .site-modal-actions .btn-primary,
+    .site-modal-actions .btn-secondary {
+        flex-basis: 100%;
+    }
+
     .gallery-item:first-child {
         grid-column: span 2;
         grid-row: span 1;
@@ -1246,6 +1483,10 @@ footer {
     .gallery-panel-header {
         flex-direction: column;
         align-items: start;
+    }
+
+    .invitation-layout {
+        grid-template-columns: 1fr;
     }
 
     .gallery-panel-summary {
