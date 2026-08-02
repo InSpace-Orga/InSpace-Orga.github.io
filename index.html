@@ -1,36 +1,38 @@
 ﻿<!DOCTYPE html>
-<html lang="de">
+<html lang="de" data-default-theme="fantasy">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InSpace Orga | LARP in Inaka und Sci-Fi-Abenteuer</title>
+    <title>InSpace Orga | Fantasy- und Star-Wars-LARP</title>
     <meta name="description"
-        content="InSpace Orga organisiert Live-Rollenspiel-Abenteuer in der Welt von Inaka: mittelalterliche Fantasy, Sci-Fi und kommende LARP-Termine.">
+        content="InSpace Orga organisiert LARP-Abenteuer in Inaka: Fantasy-Cons, Star-Wars-Sci-Fi, kommende Termine und Galerien.">
     <meta name="robots" content="index,follow">
     <link rel="canonical" href="https://inspace-orga.github.io/">
-    <link rel="stylesheet" href="style/base.css?v=2026-06-10-1">
+    <script src="js/themeToggle.js"></script>
+    <link rel="stylesheet" href="style/base.css?v=2026-08-02-1">
     <link rel="icon" type="image/png" href="img/InakaWappen_noText.png">
     <meta property="og:locale" content="de_DE">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="InSpace Orga">
-    <meta property="og:title" content="InSpace Orga | LARP in Inaka und Sci-Fi-Abenteuer">
+    <meta property="og:title" content="InSpace Orga | Fantasy- und Star-Wars-LARP">
     <meta property="og:description"
-        content="Live-Rollenspiel, Fantasywelt Inaka, Sci-Fi-Events und kommende Termine der InSpace Orga.">
+        content="Fantasy-Cons, Star-Wars-Sci-Fi, kommende Termine und Galerien der InSpace Orga.">
     <meta property="og:url" content="https://inspace-orga.github.io/">
     <meta property="og:image" content="https://inspace-orga.github.io/img/InakaWappen_noText.png">
+    <meta property="og:image:alt" content="Wappen von Inaka und InSpace Orga">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="InSpace Orga | LARP in Inaka und Sci-Fi-Abenteuer">
+    <meta name="twitter:title" content="InSpace Orga | Fantasy- und Star-Wars-LARP">
     <meta name="twitter:description"
-        content="Live-Rollenspiel, Fantasywelt Inaka, Sci-Fi-Events und kommende Termine der InSpace Orga.">
+        content="Fantasy-Cons, Star-Wars-Sci-Fi, kommende Termine und Galerien der InSpace Orga.">
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
-            "@type": "EventOrganizer",
+            "@type": "Organization",
             "name": "InSpace Orga",
             "url": "https://inspace-orga.github.io/",
             "logo": "https://inspace-orga.github.io/img/InakaWappen_noText.png",
-            "description": "Nicht eingetragener Verein und LARP-Organisation mit mittelalterlicher Fantasywelt Inaka und Sci-Fi-Veranstaltungen."
+            "description": "LARP-Organisation mit Fantasy-Cons in Inaka und Star-Wars-Sci-Fi-Veranstaltungen."
         }
     </script>
 </head>
@@ -48,23 +50,31 @@
             <div class="site-modal-meta">
                 <span>22.08.2026</span>
                 <span>36039 Fulda, Bernhards</span>
-                <span>ab 12:00 Uhr</span>
+                <span>ab 16:00 Uhr</span>
             </div>
             <div class="site-modal-actions">
                 <a href="fest-der-winde.html" class="btn-primary">Zur Einladung</a>
-                <a href="https://forms.gle/FJrQB76nKcZzYu4y5" class="btn-secondary">Zur Anmeldung</a>
             </div>
         </div>
     </div>
 
     <nav>
         <div class="nav-logo">InSpace Orga</div>
-        <ul class="nav-links">
-            <li><a href="#ueber-uns">Über uns</a></li>
-            <li><a href="#termine">Termine</a></li>
-            <li><a href="#galerie">Highlights</a></li>
-            <li><a href="#kontakt">Kontakt</a></li>
-        </ul>
+        <div class="nav-actions">
+            <ul class="nav-links">
+                <li><a href="#ueber-uns">Über uns</a></li>
+                <li><a href="#termine">Termine</a></li>
+                <li><a href="#galerie">Highlights</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+            <button class="theme-toggle" type="button" data-theme-toggle aria-label="Zum Sci-Fi-Theme wechseln" title="Zum Sci-Fi-Theme wechseln">
+                <span class="theme-toggle-track" aria-hidden="true">
+                    <span class="theme-toggle-icon fantasy">🛡️</span>
+                    <span class="theme-toggle-thumb"></span>
+                    <span class="theme-toggle-icon scifi">⭐</span>
+                </span>
+            </button>
+        </div>
     </nav>
 
     <!-- HERO -->
@@ -159,8 +169,7 @@
                         <div class="event-title">Inaka Fest der Winde</div>
                         <div class="event-desc">Feiert mit uns den Gott Kuki</div>
                         <div class="event-actions">
-                            <a href="fest-der-winde.html" class="btn-primary">Zur Einladung</a>
-                            <a href="https://forms.gle/FJrQB76nKcZzYu4y5" class="btn-secondary">Direkt zur Anmeldung</a>
+                            <a href="fest-der-winde.html" class="btn-primary">Einladung öffnen</a>
                         </div>
                         <div class="event-meta"><span>~25 Spieler</span><span>Tagescon</span></div>
                     </div>

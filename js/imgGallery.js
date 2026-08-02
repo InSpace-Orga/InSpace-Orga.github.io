@@ -60,7 +60,7 @@ function renderSlots() {
     const src = IMAGES[imageIndex];
     figure.dataset.galleryIndex = String(imageIndex);
     img.src = src;
-    img.alt = `Bild ${imageIndex + 1}`;
+    img.alt = `InSpace Orga Highlight ${imageIndex + 1}`;
     img.classList.add('active');
   });
 

@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="de">
+<html lang="de" data-default-theme="fantasy">
 
 <head>
     <meta charset="UTF-8">
@@ -9,17 +9,27 @@
         content="Datenschutzerklärung der InSpace Orga für die Website und das Hosting über GitHub Pages.">
     <meta name="robots" content="index,follow">
     <link rel="canonical" href="https://inspace-orga.github.io/datenschutz.html">
-    <link rel="stylesheet" href="style/base.css?v=2026-06-10-1">
+    <script src="js/themeToggle.js"></script>
+    <link rel="stylesheet" href="style/base.css?v=2026-08-02-1">
     <link rel="icon" type="image/png" href="img/InakaWappen_noText.png">
 </head>
 
 <body>
     <nav>
         <div class="nav-logo">InSpace Orga</div>
-        <ul class="nav-links">
-            <li><a href="index.html">Startseite</a></li>
-            <li><a href="#datenschutz">Datenschutz</a></li>
-        </ul>
+        <div class="nav-actions">
+            <ul class="nav-links">
+                <li><a href="index.html">Startseite</a></li>
+                <li><a href="#datenschutz">Datenschutz</a></li>
+            </ul>
+            <button class="theme-toggle" type="button" data-theme-toggle aria-label="Zum Sci-Fi-Theme wechseln" title="Zum Sci-Fi-Theme wechseln">
+                <span class="theme-toggle-track" aria-hidden="true">
+                    <span class="theme-toggle-icon fantasy">🛡️</span>
+                    <span class="theme-toggle-thumb"></span>
+                    <span class="theme-toggle-icon scifi">⭐</span>
+                </span>
+            </button>
+        </div>
     </nav>
 
     <section class="section-dark event-gallery-hero">

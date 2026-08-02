@@ -1,36 +1,67 @@
 ﻿<!DOCTYPE html>
-<html lang="de">
+<html lang="de" data-default-theme="scifi">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lothal Starliner I | InSpace Orga Galerie</title>
+    <title>Lothal Starliner I | Star-Wars-LARP Galerie</title>
     <meta name="description"
-        content="Die vollständige Galerie zu Lothal Starliner I mit allen Bildern aus dem Sci-Fi-LARP der InSpace Orga.">
+        content="Galerie zum Lothal Starliner I vom 11. April 2026 mit Eindrücken aus dem Star-Wars-LARP der InSpace Orga.">
     <meta name="robots" content="index,follow">
     <link rel="canonical" href="https://inspace-orga.github.io/galerien/lothal-starliner-i.html">
-    <link rel="stylesheet" href="../style/base.css?v=2026-06-10-1">
+    <script src="../js/themeToggle.js"></script>
+    <link rel="stylesheet" href="../style/base.css?v=2026-08-02-1">
     <link rel="icon" type="image/png" href="../img/InakaWappen_noText.png">
     <meta property="og:locale" content="de_DE">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="InSpace Orga">
-    <meta property="og:title" content="Lothal Starliner I | InSpace Orga Galerie">
+    <meta property="og:title" content="Lothal Starliner I | Star-Wars-LARP Galerie">
     <meta property="og:description"
-        content="Die vollständige Galerie zu Lothal Starliner I mit allen Bildern aus dem Sci-Fi-LARP der InSpace Orga.">
+        content="Galerie zum Lothal Starliner I vom 11. April 2026 mit Eindrücken aus dem Star-Wars-LARP der InSpace Orga.">
     <meta property="og:url" content="https://inspace-orga.github.io/galerien/lothal-starliner-i.html">
     <meta property="og:image" content="https://inspace-orga.github.io/img/InakaWappen_noText.png">
+    <meta property="og:image:alt" content="Wappen von Inaka und InSpace Orga">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Lothal Starliner I | InSpace Orga Galerie">
+    <meta name="twitter:title" content="Lothal Starliner I | Star-Wars-LARP Galerie">
     <meta name="twitter:description"
-        content="Die vollständige Galerie zu Lothal Starliner I mit allen Bildern aus dem Sci-Fi-LARP der InSpace Orga.">
+        content="Galerie zum Lothal Starliner I vom 11. April 2026 mit Eindrücken aus dem Star-Wars-LARP der InSpace Orga.">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Event",
+            "name": "Lothal Starliner I",
+            "description": "Galerie zum Sci-Fi-Event Lothal Starliner I.",
+            "startDate": "2026-04-11",
+            "eventStatus": "https://schema.org/EventCompleted",
+            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+            "url": "https://inspace-orga.github.io/galerien/lothal-starliner-i.html",
+            "image": [
+                "https://inspace-orga.github.io/imgGallery/web/lothal-starliner-i/edit01.webp"
+            ],
+            "organizer": {
+                "@type": "Organization",
+                "name": "InSpace Orga",
+                "url": "https://inspace-orga.github.io/"
+            }
+        }
+    </script>
 </head>
 
 <body>
     <nav>
         <div class="nav-logo">InSpace Orga</div>
-        <ul class="nav-links">
-            <li><a href="../index.html#galerie">Zurück zu den Highlights</a></li>
-        </ul>
+        <div class="nav-actions">
+            <ul class="nav-links">
+                <li><a href="../index.html#galerie">Zurück zu den Highlights</a></li>
+            </ul>
+            <button class="theme-toggle" type="button" data-theme-toggle aria-label="Zum Fantasy-Theme wechseln" title="Zum Fantasy-Theme wechseln">
+                <span class="theme-toggle-track" aria-hidden="true">
+                    <span class="theme-toggle-icon fantasy">🛡️</span>
+                    <span class="theme-toggle-thumb"></span>
+                    <span class="theme-toggle-icon scifi">⭐</span>
+                </span>
+            </button>
+        </div>
     </nav>
 
     <section class="section-dark event-gallery-hero event-gallery-hero-lothal">
@@ -79,12 +110,12 @@
 
             const img = document.createElement('img');
             img.src = `${folder}/${file.replace(/\.jpg$/i, '.webp')}`;
-            img.alt = `Lothal Starliner I - Bild ${String(index + 1).padStart(2, '0')}`;
+            img.alt = `Lothal Starliner I - Foto ${String(index + 1).padStart(2, '0')}`;
             img.loading = 'lazy';
             img.decoding = 'async';
 
             const caption = document.createElement('figcaption');
-            caption.textContent = `Bild ${String(index + 1).padStart(2, '0')}`;
+            caption.textContent = `Foto ${String(index + 1).padStart(2, '0')}`;
 
             figure.append(img, caption);
             grid.appendChild(figure);
@@ -95,7 +126,7 @@
                 images: fullPaths,
                 selector: '#eventGalleryGrid .event-gallery-card',
                 title: 'Lothal Starliner I',
-                captions: images.map((_, index) => `Bild ${String(index + 1).padStart(2, '0')}`),
+                captions: images.map((_, index) => `Foto ${String(index + 1).padStart(2, '0')}`),
             });
         }
     </script>
