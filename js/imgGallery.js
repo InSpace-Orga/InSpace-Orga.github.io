@@ -1,7 +1,10 @@
-﻿const IMAGES = [
+const IMAGES = [
   'imgGallery/web/home/IMG (1).webp',
+  'imgGallery/web/fest-der-winde-i/Foto 22.08.26, 17 55 14.webp',
   'imgGallery/web/home/IMG (2).webp',
+  'imgGallery/web/fest-der-winde-i/Foto 22.08.26, 17 53 03.webp',
   'imgGallery/web/home/IMG (3).webp',
+  'imgGallery/web/fest-der-winde-i/Foto 22.08.26, 19 53 49.webp',
   'imgGallery/web/home/IMG (4).webp',
   'imgGallery/web/home/IMG (5).webp',
   'imgGallery/web/home/IMG (6).webp',

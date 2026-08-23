@@ -8,6 +8,7 @@ SOURCE_TARGETS = [
     (ROOT / "imgGallery", ROOT / "imgGallery" / "web" / "home", 1600, 82),
     (ROOT / "imgGallery" / "lothal-starliner-i", ROOT / "imgGallery" / "web" / "lothal-starliner-i", 1600, 82),
     (ROOT / "imgGallery" / "inaka-weinfest-i", ROOT / "imgGallery" / "web" / "inaka-weinfest-i", 1600, 82),
+    (ROOT / "imgGallery" / "fest-der-winde-i", ROOT / "imgGallery" / "web" / "fest-der-winde-i", 1600, 82),
 ]
 
 

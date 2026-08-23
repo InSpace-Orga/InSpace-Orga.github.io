@@ -24,7 +24,8 @@ Die Seite besteht aus statischem HTML, CSS und etwas JavaScript und wird ueber G
 - Originalbilder fuer die Hauptseite liegen in `imgGallery/`
 - Originalbilder fuer `Lothal Starliner I` liegen in `imgGallery/lothal-starliner-i/`
 - Originalbilder fuer `Inaka Weinfest I` liegen in `imgGallery/inaka-weinfest-i/`
-- Die Web-Versionen fuer die Website werden in `imgGallery/web/home/`, `imgGallery/web/lothal-starliner-i/` und `imgGallery/web/inaka-weinfest-i/` erzeugt
+- Originalbilder fuer `Inaka Fest der Winde I` liegen in `imgGallery/fest-der-winde-i/`
+- Die Web-Versionen fuer die Website werden in `imgGallery/web/home/`, `imgGallery/web/lothal-starliner-i/`, `imgGallery/web/inaka-weinfest-i/` und `imgGallery/web/fest-der-winde-i/` erzeugt
 
 ### Bilder in WebP umwandeln
 
@@ -46,7 +47,7 @@ Wenn neue Galerien dazukommen, einfach:
 
 - Die Website kennt zwei Varianten: `fantasy` und `scifi`
 - Der Default pro Seite steht im `<html>`-Tag als `data-default-theme`
-- `index.html`, `fest-der-winde.html`, `datenschutz.html` und `galerien/inaka-weinfest-i.html` nutzen standardmaessig `fantasy`
+- `index.html`, `datenschutz.html`, `galerien/inaka-weinfest-i.html` und `galerien/fest-der-winde-i.html` nutzen standardmaessig `fantasy`
 - `galerien/lothal-starliner-i.html` nutzt standardmaessig `scifi`
 - Der Button in der Navigation schaltet das Theme manuell um
 - Die manuelle Auswahl wird im Browser gespeichert
