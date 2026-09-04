@@ -57,7 +57,8 @@
 
   function bootTheme() {
     const storedTheme = readStoredTheme();
-    const theme = storedTheme || getDefaultTheme();
+    const preferDefaultTheme = document.documentElement.dataset.preferDefaultTheme === 'true';
+    const theme = preferDefaultTheme ? getDefaultTheme() : storedTheme || getDefaultTheme();
     setTheme(theme);
   }
 
