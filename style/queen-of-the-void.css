@@ -1,0 +1,26 @@
+.invitation-copy p a {
+    color: var(--rust);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.18em;
+}
+
+.section-dark .invitation-copy p a {
+    color: var(--gold-light);
+}
+
+.invitation-copy p a:hover {
+    color: var(--ink);
+    text-decoration-thickness: 0.14em;
+}
+
+.section-dark .invitation-copy p a:hover {
+    color: var(--parchment);
+}
+
+.invitation-copy p a:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+    border-radius: 2px;
+}

@@ -3,7 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
         '[link zu kontakt]': '../../index.html#kontakt',
         '[Link zum Kontakt]': '../../index.html#kontakt',
         '[Link zur Datenschutzerklärung]': 'datenschutz.html',
-        '[Link zur Datenschutzerklärung von Google]': 'https://policies.google.com/privacy?hl=de'
+        '[Link zur Datenschutzerklärung von Google]': 'https://policies.google.com/privacy?hl=de',
+        '[Link zur Datenschutzerklärung von PayPal]': 'https://www.paypal.com/de/legalhub/paypal/privacy-full'
     };
 
     const appendLinkedText = (element, text) => {
