@@ -23,11 +23,11 @@
     <meta name="twitter:image:alt" content="Black Mynocks – Szene aus Lothal Starliner I">
     <script src="../../js/themeToggle.js"></script>
     <link rel="stylesheet" href="../../style/base.css?v=2026-08-02-1">
-    <link rel="stylesheet" href="../../style/fading-stars-fraktionen.css?v=2026-10-27-1">
+    <link rel="stylesheet" href="../../style/fading-stars-fraktionen.css?v=2026-11-02-2">
     <link rel="icon" type="image/png" href="../../img/InakaWappen_noText.png">
 </head>
 
-<body>
+<body class="factions-page">
     <nav>
         <div class="nav-logo">InSpace Orga</div>
         <div class="nav-actions">
@@ -52,7 +52,7 @@
                 <span class="section-label">Fading Stars I · Kokosta III</span>
                 <h1 class="section-title light">Drei Fraktionen.<br>Deine Entscheidung.</h1>
                 <p class="event-gallery-lead">Widerstand, Geschäfte oder imperiale Ordnung: Entdecke die Interessen der drei Fraktionen und finde deinen Platz auf Kokosta III.</p>
-                <div class="event-gallery-nav">
+                <div class="event-gallery-nav faction-index" aria-label="Fraktion ausw&#228;hlen">
                     <a class="btn-secondary" href="#rebellen">Rebellion</a>
                     <a class="btn-secondary" href="#kartell">Black Mynocks</a>
                     <a class="btn-secondary" href="#imperium">Imperium</a>
@@ -65,18 +65,21 @@
                 <article class="faction-card faction-card-rebellen" id="rebellen" aria-labelledby="heading-rebellen">
                     <header class="faction-card-header">
                         <span class="faction-number" aria-hidden="true">01</span>
-                        <span class="section-label">Fraktion</span>
+                        <span class="section-label">Fraktion / Kokosta III</span>
                         <h2 id="heading-rebellen">Rebellion</h2>
                     </header>
                     <div class="faction-visual">
                         <img src="../../img/Reb.jpeg" alt="Motiv für die Fraktion Rebellion" loading="lazy" decoding="async">
+                        <p class="faction-caption">Widerstand &amp; verdeckte Operationen</p>
                     </div>
                     <div class="faction-card-body">
-                        <h3>Einsatzauftrag: Kokosta III</h3>
+                        <div class="faction-story">
+                            <h3>Einsatzauftrag: Kokosta III</h3>
                             <p>Die Rebellenkräfte wurden für einen Einsatz auf Kokosta III angeheuert. Das Imperium hat erst vor kurzer Zeit damit begonnen, seine Präsenz auf dem Planeten auszubauen und eine eigene Garnison zu errichten. Noch ist diese Stellung nicht vollständig gefestigt – und genau das soll auch so bleiben. Ziel des Einsatzes ist es, den imperialen Einfluss auf Kokosta III zu schwächen, den weiteren Aufbau der Garnison zu erschweren und gleichzeitig Unterstützer innerhalb der Bevölkerung zu gewinnen.</p>
                             <p>Dabei ist nicht jeder Auftrag mit einem Blaster zu lösen. Kokosta III bietet Raum für Politikspiel, Informationsbeschaffung, Sabotage und verdeckte Operationen. Gleichzeitig sollen imperiale Nachschubwege beobachtet und, wenn möglich, gestört werden.</p>
                             <p>Die ein oder andere imperiale Versorgungskiste, die ihren Bestimmungsort nicht erreicht, dürfte für die Rebellion schließlich deutlich nützlicher sein.</p>
                             <p>Mit offenen Konfrontationen sollte dennoch bedacht umgegangen werden. Das Imperium ist noch neu auf dem Planeten und präsentiert sich gegenüber der Bevölkerung bislang als Garant für Ordnung und Sicherheit. Es liegt an euch, dafür zu sorgen, dass diese Darstellung nicht unwidersprochen bleibt.</p>
+                        </div>
                         <div class="faction-ot">
                             <h3>OT-Infos</h3>
                             <p>Auch die Rebellion ist neu auf Kokosta III und soll sich ihren Platz auf dem Planeten erst erspielen.</p>
@@ -92,20 +95,23 @@
                 <article class="faction-card faction-card-kartell" id="kartell" aria-labelledby="heading-kartell">
                     <header class="faction-card-header">
                         <span class="faction-number" aria-hidden="true">02</span>
-                        <span class="section-label">Fraktion</span>
+                        <span class="section-label">Fraktion / Kokosta III</span>
                         <h2 id="heading-kartell">Black Mynocks</h2>
                     </header>
                     <div class="faction-visual">
                         <img src="../../imgGallery/web/lothal-starliner-i/edit16.webp" alt="Black Mynocks – Szene aus Lothal Starliner I" loading="lazy" decoding="async">
+                        <p class="faction-caption">Credits, Kontakte &amp; Einfluss</p>
                     </div>
                     <div class="faction-card-body">
-                        <h3>Die Black Mynocks</h3>
+                        <div class="faction-story">
+                            <h3>Die Black Mynocks</h3>
                             <p>Seit Jahren haben die Black Mynocks auf Kokosta III das Sagen.</p>
                             <p>Wo andere von Gesetzen, Ordnung oder Freiheit reden, zählen für das Kartell vor allem drei Dinge: Credits, Einfluss und Loyalität. Doch plötzlich verändert sich etwas auf Kokosta III. Das Imperium beginnt, seine Präsenz auszubauen, während gleichzeitig die Rebellion versucht, auf dem Planeten Fuß zu fassen. Beide Seiten bringen ihre eigenen Vorstellungen davon mit, wie Kokosta III in Zukunft aussehen soll.</p>
                             <p>Und beide vergessen dabei eine Kleinigkeit:</p>
                             <p>Kokosta III gehört schon jemandem.</p>
                             <p>Die Black Mynocks haben nicht vor, ihre Geschäfte kampflos aufzugeben. Ganz im Gegenteil: Neue Mächte bedeuten neue Probleme – aber auch neue Geschäftsmöglichkeiten.</p>
                             <p>Wer etwas kaufen, verkaufen, beschaffen, transportieren, verschwinden lassen oder herausfinden lassen möchte, landet früher oder später bei den Mynocks.</p>
+                        </div>
                         <div class="faction-ot">
                             <h3>OT-Infos</h3>
                             <p>Das Kartell ist bereits seit Jahren auf Kokosta III aktiv und gehört zu den etablierten Kräften des Planeten. Mit dem Auftauchen von Imperium und Rebellion gerät dieses Gleichgewicht nun ins Wanken.</p>
@@ -121,17 +127,20 @@
                 <article class="faction-card faction-card-imperium" id="imperium" aria-labelledby="heading-imperium">
                     <header class="faction-card-header">
                         <span class="faction-number" aria-hidden="true">03</span>
-                        <span class="section-label">Fraktion</span>
+                        <span class="section-label">Fraktion / Kokosta III</span>
                         <h2 id="heading-imperium">Imperium</h2>
                     </header>
                     <div class="faction-visual">
                         <img src="../../img/voff.png" alt="Motiv für die Fraktion Imperium" loading="lazy" decoding="async">
+                        <p class="faction-caption">Garnison, Versorgung &amp; Ordnung</p>
                     </div>
                     <div class="faction-card-body">
-                        <h3>Versetzungsbefehl: Kokosta III</h3>
+                        <div class="faction-story">
+                            <h3>Versetzungsbefehl: Kokosta III</h3>
                             <p>Der hier adressierte imperiale Soldat wird nach Kokosta III versetzt.</p>
                             <p>Ziel der Mission ist es, die imperiale Präsenz auf dem Planeten zu sichern und weiter auszubauen. Da sich die Garnison noch im Aufbau befindet, wird jede helfende Hand gebraucht. Eure Aufgabe ist es, beim Aufbau der Basis zu unterstützen, wichtige Bereiche zu sichern und dazu beizutragen, die Stellung des Imperiums auf Kokosta III zu festigen.</p>
                             <p>Mit Widerstand aus Teilen der Zivilbevölkerung ist zu rechnen. Besonders das örtliche Kartell könnte versuchen, die neue imperiale Ordnung zu behindern.</p>
+                        </div>
                         <div class="faction-ot">
                             <h3>OT-Infos</h3>
                             <p>Die Imperialen sind noch neu auf Kokosta III. Ihr könnt also direkt beim Aufbau der Garnison mitspielen und euren Charakter aktiv in die Entwicklung des Standorts einbringen.</p>
